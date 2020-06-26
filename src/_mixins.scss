@@ -1,0 +1,31 @@
+@import './_variables.scss';
+
+// шрифт
+@mixin Roboto($size, $weight) {
+  font-family: "Roboto Mono", monospace;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin noborder {
+  outline: none;
+  border: none;
+}
+
+@mixin btn ($color) {
+  color: $color;
+  transition: opacity .2s, color .2s;
+
+  &:disabled {
+    opacity: .3;
+    cursor: default;
+  }
+
+  &:not(:disabled):hover {
+    color: darken($color, 20%);
+  }
+
+  &:not(:disabled):active {
+    color: lighten($color, 20%);
+  }
+}
